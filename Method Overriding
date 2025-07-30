@@ -1,0 +1,47 @@
+/*
+Method Overriding means:
+Redefining a method in the child class that is already defined in the parent class — with same name, same parameters, and same return type.
+It's used to achieve runtime polymorphism
+ */
+
+class Animal{
+    int legs=4;
+    public void eat(){
+        System.out.println("I'm eating");
+    }
+    public void walk(){
+        System.out.println("I'm walking");
+    }
+}
+
+class Dog extends Animal{
+    int legs=5; //override
+    boolean canBark=true;
+    @Override
+    public void eat(){
+        System.out.println("Dog is eating"); 
+    }
+}
+public class Overriding {
+    public static void main(String[] args) {
+        Animal obj1=new Animal();
+        System.out.println(obj1.legs);
+        obj1.eat();
+        obj1.walk();  
+        Dog obj2=new Dog();
+        System.out.println(obj2.canBark);
+        System.out.println(obj2.legs);
+        obj2.eat();
+        obj2.walk();
+    }
+}
+
+/*
+4
+I'm eating
+I'm walking
+true
+5
+Dog is eating
+I'm walking
+ */
