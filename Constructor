@@ -1,0 +1,77 @@
+Constructor:
+A constructor is a special method in a class that runs automatically when you create an object.
+1. Its job? To initialize the object.
+2. It has no return type (not even void)
+3. It has the same name as the class
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Default Constructor:
+1. A default constructor is a constructor that takes no arguments.
+2. If no constructor is explicitly defined in a class, the Java compiler automatically provides a public, no-argument default constructor.
+3. This automatically generated default constructor initializes instance variables to their default values (e.g., 0 for numeric types, false for booleans, null for object references).
+
+import java.util.Scanner;
+
+class Constuctor{
+    String name;
+    int roll;
+
+    public void display(){
+        System.out.println("Name: "+name+"\nRoll no.: "+roll);
+    }
+}
+
+public class constructor {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+
+        Constuctor d=new Constuctor();
+        d.display(); //null 0
+        
+        in.close();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Parameterized Constructor:
+1. A parameterized constructor is a constructor that accepts one or more arguments.
+2. It allows for initializing object properties with specific values provided during object creation, rather than relying on default values.
+3. If a parameterized constructor is defined in a class, the compiler will not automatically provide a default constructor. If a no-argument constructor is still desired, it must be explicitly defined.
+
+import java.util.Scanner;
+
+class Constuctor{
+    String name;
+    int roll;
+    
+    //default constructor
+    Constuctor(){
+        name="maha";
+        roll=215;
+    }
+
+    //parameterised constructor
+    Constuctor(String n,int r){
+        name=n;
+        roll=r;
+    }
+    public void display(){
+        System.out.println("Name: "+name+"\nRoll no.: "+roll);
+    }
+}
+
+public class constructor {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+
+        Constuctor d=new Constuctor();
+        d.display(); //maha 215
+
+        Constuctor p=new Constuctor(in.nextLine(),in.nextInt());
+        p.display();
+
+        in.close();
+    }
+}
+
