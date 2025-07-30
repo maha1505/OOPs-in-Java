@@ -1,0 +1,58 @@
+Create object within same class
+
+import java.util.Scanner;
+
+class AppForm_within{
+    String name;
+    int roll;
+    void display(){
+        System.out.println("Name: "+name);
+        System.out.println("Roll No.: "+roll);
+    }
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        AppForm_within addmission=new AppForm_within();
+        addmission.name=in.nextLine();
+        addmission.roll=in.nextInt();
+        addmission.display();
+        in.close();
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create seperate class
+
+import java.util.Scanner;
+
+class AppForm {
+    String name;
+    int roll;
+    void display(){
+        System.out.println("Name: "+name);
+        System.out.println("Roll No.: "+roll);
+    }    
+}
+
+public class AppForm_out{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        AppForm_within addmission1=new AppForm_within();
+        System.out.print("Name: ");
+        addmission1.name=in.nextLine();
+        System.out.print("Roll: ");
+        addmission1.roll=in.nextInt();
+        addmission1.display();
+        AppForm_within addmission2=new AppForm_within();
+        in.nextLine();
+        System.out.print("Name: ");
+        addmission2.name=in.nextLine();
+        System.out.print("Roll: ");
+        addmission2.roll=in.nextInt();
+        addmission2.display();
+        in.close();
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
