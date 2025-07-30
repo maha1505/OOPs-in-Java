@@ -1,0 +1,39 @@
+Private attributes - accessible only within the class
+Here name is private, so no one can access it directly. Instead, we provide public methods called getters and setters to safely access or modify it.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+class access{
+    private String name;
+    int roll;
+    public void display(){
+        System.out.println("Name: "+name);
+        System.out.println("Roll No.: "+roll);
+    } 
+    public void setvalue(String str,int num){
+        name=str;
+        roll=num;
+    }
+    public String getvalue(){
+        return name;
+    }
+}
+public class AccessModifier {
+    public static void main(String[] args) {
+        /*AppForm_within addmission2=new AppForm_within();
+        in.nextLine();
+        System.out.print("Name: ");
+        addmission2.name=in.nextLine(); //error occurs as directly accessing the name which is private 
+         */
+
+        //using getter and setter function to access private attribute
+        access addmission1=new access();
+        addmission1.setvalue("maha", 215); //not accessing name directly but passing the value to access name
+        addmission1.display();
+        System.out.println("I");
+        // System.out.println(addmission1.name); //error arise as the name is not visible to main class
+        System.out.println("Roll no :"+addmission1.roll); //gives 215
+        //to get the value of name in accessModifier class use getvalue
+        System.out.println("Name: "+addmission1.getvalue());
+    }
+}
