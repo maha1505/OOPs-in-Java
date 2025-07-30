@@ -1,0 +1,37 @@
+Encapsulation - Hiding the internal data of a class and only exposing it through public methods.
+To allow controlled access and modification of the private data members, public methods known as "getter" and "setter" methods are provided.
+1. Getter methods: (e.g., getName()) allow external classes to retrieve the value of a private variable.
+2. Setter methods: (e.g., setName(String newName)) allow external classes to modify the value of a private variable, often with validation logic to ensure data integrity.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+class encapsulationClass{
+    private String name;
+    private int roll;
+    public void setName(String s){
+        name=s;
+    }
+    public void setRollNo(int n){
+        roll=n;
+    }
+    public void getName(){
+        System.out.println("Name: "+name);
+    }
+    public void getRollNo(){
+        System.out.println("Roll No.: "+roll);
+    }
+}
+public class encapsulation {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        encapsulationClass ex=new encapsulationClass();
+        System.out.print("Enter Name: ");
+        ex.setName(in.nextLine());
+        System.out.print("Enter Roll No.: ");
+        ex.setRollNo(in.nextInt());
+        ex.getName();
+        ex.getRollNo();
+        in.close();
+    }
+}
